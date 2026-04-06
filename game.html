@@ -28,6 +28,14 @@
     start();
   </script>
   <script>
+    navigator.serviceWorker.addEventListener("message", (event) => {
+      if (event.data.type === "invalid-id") {
+        alert("Invalid Level ID");
+        window.location.href = "https://lasokar.github.io/geometrydashdotcom/";
+      }
+    });
+  </script>
+  <script>
     // ResizeObserver catches iframe size changes that window.resize misses
     // (e.g. parent window maximize, snap, title bar drag)
     new ResizeObserver(() => {
